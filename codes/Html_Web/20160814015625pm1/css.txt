@@ -1,0 +1,97 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css';
+@import 'http://fontawesome.io/3.2.1/assets/font-awesome/css/font-awesome.css';
+
+*, :before, :after {
+  box-sizing: border-box;
+  -webkit-transition:0.6s;
+  -moz-transition:0.6s;
+  transition:0.6s;
+}
+body {
+  height: 100vh;
+  margin: 0;
+  font-family:sans-serif,helvetica;
+}
+.menu {
+  background: #274271;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  color: #e7e7e7;
+  font-size: 2em;
+  cursor: pointer;
+}
+.menu .menubar{
+  padding: 15px 16px;
+}
+.menu, .menu:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu:before, li:before {
+  font-feature-settings: 'liga';
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.menu ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: auto;
+  height: auto;
+  background: #474744;
+  padding: .5em 0;
+  padding-right:5px; 
+  margin: 0;
+  margin-top: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+  color: inherit;
+  font: 400 18px sans-serif;
+  white-space: nowrap;
+  cursor: default;
+}
+.menu ul.hide {
+  margin-top: .7em;
+  visibility: hidden;
+  opacity: 0;
+}
+.menu ul:before {
+  content: '';
+  width: .75em;
+  height: .75em;
+  background: inherit;
+  position: absolute;
+  top: -.375em;
+  left: calc(56px / 2 - .375em);
+  transform: rotate(45deg);
+}
+.menu ul li {
+  font-family: sans-serif,helvetica;
+  font-weight: 400;
+  font-size: 17px;
+  list-style: none;
+  padding: .5em;
+  padding-left: 0em;
+  margin: 0;
+  position: relative;
+  cursor: pointer;
+  transition:0.2s;
+}
+.menu ul li:before {
+  position: absolute;
+  top: calc(5% + 8px);
+  left: 8px;
+}
+.menu ul li i {
+  padding-left: 15px;
+  margin-right: 10px;
+}
+.menu ul li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}

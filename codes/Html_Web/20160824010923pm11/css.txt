@@ -1,0 +1,95 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+* {
+  padding: 0;
+  margin: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif,helvetica;
+}
+
+[class*="entypo-"]:before {
+  display: inline-block;
+  font-family: helvetica, sans-serif;
+  color: white;
+  line-height: 65px;
+}
+
+#navigate {
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  display: block;
+}
+#navigate .toggle {
+  width: 65px;
+  height: 65px;
+  float: left;
+  font-size: 35px;
+  color: white;
+  line-height: 65px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.menu {
+  position: relative;
+  float: left;
+  background-color: #f4f4f4;
+  overflow: hidden;
+  width: 0;
+  -moz-transition: width 0.7s ease-in;
+  -o-transition: width 0.7s ease-in;
+  -webkit-transition: width 0.7s ease-in;
+  transition: width 0.7s ease-in;
+}
+.menu ul {
+  list-style: none;
+  height: 65px;
+}
+.menu ul li {
+  display: inline-block;
+}
+.menu ul li a {
+  display: block;
+  padding: 0 35px;
+  height: 65px;
+  line-height: 65px;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: .1em;
+  -moz-transition:border-bottom 0.17s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+  -webkit-transition:border-bottom 0.17s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+  transition:border-bottom 0.17s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+
+}
+.menu ul li a:hover {
+  cursor: pointer;
+  border-bottom: 5px solid #3399CC;
+}
+
+/* Handle Classes with JQuery */
+.open {
+  width: 562px;
+  -moz-transition: width 0.4s linear;
+  -webkit-transition: width 0.4s linear;
+  transition: width 0.4s linear;
+}
+.toggle.cancel {
+  background-color: #f44336;
+  opacity: 0.85;
+}
+.toggle.cancel:hover {
+  opacity: 0.95;
+}
+.toggle.menu {
+  background-color: #4285f4;
+}

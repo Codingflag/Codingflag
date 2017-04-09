@@ -1,0 +1,12 @@
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--
+NOTE :- Put above JQuery Library in starting of 'HEAD' tag.
+-->
+<div class="container">
+   <div class="search">
+      <input type="text" id="searchbox" class="searchTextBox" onkeyup="cleanSpecialChar('searchbox')" onkeydown="cleanSpecialChar('searchbox')"  placeholder="What are you looking for?" required>
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i> &nbsp;Search
+     </button>
+   </div>
+</div>

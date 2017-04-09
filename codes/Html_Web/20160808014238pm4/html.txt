@@ -1,0 +1,13 @@
+<!--
+NOTE :- Put above JQuery Library in starting of 'HEAD' tag.
+-->
+<h1 class="welcomeMsg"></h1>
+<div class="login">
+	<h1>Sign In</h1>
+    <form method="post">
+    	<input type="text" id="emailId" placeholder="Enter Email" required />
+        <input type="password" id="password" placeholder="Enter Password" required class="hide" />
+        <button type="button" id="LoginBtn" class="btn btn-block btn-large">Next</button>
+    </form>
+</div>
+

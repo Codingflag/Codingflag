@@ -1,0 +1,90 @@
+@import 'https://daneden.github.io/animate.css/animate.min.css';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif,helvetica;
+  background: url(https://inspirationhut.net/wp-content/uploads/2013/05/21.png) no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.wrapper .button {
+  position: relative;
+  width: 240px;
+  margin: 2em auto;
+  height: 70px;
+  display: block;
+  font-size: 2em;
+  color: #fff;
+  background: cornflowerblue;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 .25em #333;
+  cursor: pointer;
+  -moz-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.wrapper .button:hover {
+  opacity: 0.92;
+  background: transparent;
+  color: #5282d8;
+  border:2px solid #5282d8;
+  box-shadow: none;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.7);
+  -moz-transition:all 0.2s;
+  -webkit-transition:all 0.2s;
+  transition:all 0.2s;
+}
+.popup {
+  position: relative;
+  width: 32%;
+  margin: 200px auto;
+  padding: 18px;
+  background: #e7e7e7;
+  border-radius: 6px;
+  -moz-transition: all 0.5s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+  -webkit-transition: all 0.5s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+  transition: all 0.5s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+}
+.popup .heading {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 15px;
+  right: 32px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.popup .close:hover {
+  color: #d62222;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}

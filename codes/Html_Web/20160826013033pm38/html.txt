@@ -1,0 +1,15 @@
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--
+NOTE :- Put above JQuery Library in starting of 'HEAD' tag.
+-->
+<div class="progress-bar">
+  <span class="desc">
+      <h2 id="desc">Progress Bar</h2>
+  </span>
+  <span class="bar">
+    <span class="progress"></span>
+  </span>
+  <span class="percent">
+      <h2 id="percent">1%</h2>
+  </span>
+</div>

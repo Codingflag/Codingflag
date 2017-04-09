@@ -1,0 +1,17 @@
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--
+NOTE :- Put above JQuery Library in starting of 'HEAD' tag.
+-->
+<div id="popup" class="overlay">
+  <div class="popup">
+    <h2 class="heading">I'm Custom Popup</h2>
+    <a class="close">&times;</a>
+    <div class="content">
+      Welcome! You have clicked on 'Click Me' button.Resulted an Animated Custom Designed Popup box.
+      <br><br> Add any content here (images,videos,buttons,iframe..etc).
+    </div>
+  </div>
+</div>
+<div class="wrapper">
+	<button class="button">Click Me</button>
+</div>

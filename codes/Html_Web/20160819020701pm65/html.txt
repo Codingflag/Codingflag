@@ -1,0 +1,9 @@
+<h2 class="desc">Toggle Buttons</h2>
+<div class="toggleBtn">
+  <input type="checkbox" id="first">
+  <label for="first"></label>
+</div>
+<div class="toggleBtn">
+  <input type="checkbox" id="second" checked>
+  <label for="second"></label>
+</div>

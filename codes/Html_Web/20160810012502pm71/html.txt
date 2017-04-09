@@ -1,0 +1,19 @@
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--
+NOTE :- put above JQuery library in starting of 'HEAD' tag.
+Thanks to RINKANS !
+-->
+<h2 class="text">Fly-In-Animation</h2>
+
+<ul class="fly-in hidden">
+    <li>C</li>
+    <li>O</li>
+    <li>D</li>
+    <li>I</li>
+    <li>N</li>
+    <li>G</li>
+    <li>F</li>
+    <li>L</li>
+    <li>A</li>
+    <li>G</li>
+</ul>

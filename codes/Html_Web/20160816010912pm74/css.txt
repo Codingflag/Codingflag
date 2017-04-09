@@ -1,0 +1,114 @@
+.wrapper {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif,helvetica;
+  font-weight: 400;
+}
+.wrapper .toggle {
+  position: absolute;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  top: 80px;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  background: #33373c;
+  border-radius: 50%;
+  -webkit-transition:all 0.4s ease-in;
+  -moz-transition:all 0.4s ease-in;
+  transition:all 0.4s ease-in;
+}
+.wrapper .toggle .icon,.toggle .icon:before, .toggle .icon:after {
+  position: absolute;
+  margin: 0 auto;
+  top: 50px;
+  left: 0;
+  right: 0;
+  width: 55px;
+  height: 2px;
+  border-radius: 5px;
+  background-color: #fff;
+  -webkit-transition: all 0.3s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  -moz-transition: all 0.3s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  transition: all 0.3s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+}
+.toggle .icon:before, .toggle .icon:after {
+  content: '';
+  left: 0;
+  -webkit-transition: all 0.3s cubic-bezier(0.32, 0.06, 0.5, 0.17);
+  -moz-transition: all 0.3s cubic-bezier(0.32, 0.06, 0.5, 0.17);
+  transition: all 0.3s cubic-bezier(0.32, 0.06, 0.5, 0.17);
+}
+.wrapper .toggle .icon:before {
+  top: -15px;
+  left: 0;
+}
+.wrapper .toggle .icon:after {
+  top: 15px;
+}
+
+.wrapper .toggle.rotate .icon {
+  background: transparent;	
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+.wrapper .toggle.rotate .icon:before {
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.wrapper .toggle.rotate .icon:after {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.wrapper .toggle:hover{
+  -webkit-transform:scale(1.12);
+  -moz-transform:scale(1.12);
+  transform:scale(1.12);
+}
+
+/* List Styles */
+
+.wrapper #menu {	
+  position: absolute;
+  margin: 0 auto;	
+  width: auto;
+  overflow: hidden;
+  height: 0px;  
+  left: 0;
+  right: 0;
+  top: 200px;
+  text-align: center;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+.wrapper #menu.active {
+  height: 300px;
+}
+.wrapper #menu ul {
+  list-style: none;
+  padding: 0;
+}
+.wrapper #menu ul li {
+  margin: 25px 0px;
+  padding: 5px 0px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: sans-serif,helvetica;
+  font-size: 19px;
+  font-weight: 400;
+  -webkit-transition: all 0.4s ease-in;
+  -moz-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+}
+.wrapper #menu ul li:hover {
+	font-size: 21px;
+	color:#333;
+}

@@ -1,0 +1,109 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css';
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: #f2f2f2;
+  font-family: sans-serif,helvetica;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.search {
+  width: 100%;
+  position: relative
+}
+.searchTextBox {
+	position: absolute;
+	background-color: #f2f2f2;
+  border: none;
+  outline: none;
+  float: left;
+  font-size: 20px;
+  opacity: 0;
+  top:-67px;
+  width: 0;
+  padding: 5px;
+  height: 35px;
+  border-radius: 10px;
+  padding-left: 3px;
+  outline: none;
+  color: #9DBFAF;
+  -webkit-transition:all 0.3s ease-in;
+  -moz-transition:all 0.3s ease-in;
+  transition:all 0.3s ease-in;
+}
+.Open {
+	opacity: 1;
+	width: 100%;
+	padding: 5px;
+	padding-right: 10px;
+	border-bottom: 3px solid #00B4CC;
+}
+.searchTextBox:focus{
+  color: #37a2c1;
+  font-weight: 600;
+  font-size: 22px;
+}
+.searchButton {
+  position: absolute;  
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  transform:translate(-50%, -50%);
+  height: 45px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  outline: none;
+}
+.searching {
+	text-align: center;
+	color:#00B4CC;
+  font-size: 200%;
+	-webkit-animation:pulse 1s ease-out infinite;
+  -moz-animation:pulse 1s ease-out infinite;
+  animation:pulse 1s ease-out infinite;
+}
+
+@-webkit-keyframes pulse{
+	0%,100%{
+		opacity: 1;
+		font-size: 215%;
+	}
+	50%{
+		opacity: 0.3;
+		font-size: 180%;
+	}
+}
+@-moz-keyframes pulse{
+  0%,100%{
+    opacity: 1;
+    font-size: 215%;
+  }
+  50%{
+    opacity: 0.3;
+    font-size: 180%;
+  }
+}
+@keyframes pulse{
+  0%,100%{
+    opacity: 1;
+    font-size: 215%;
+  }
+  50%{
+    opacity: 0.3;
+    font-size: 180%;
+  }
+}

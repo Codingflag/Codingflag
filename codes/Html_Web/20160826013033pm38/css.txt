@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  background:transparent url(http://www.codingflag.in/images/background/medium-dark-Pattern.jpg) repeat;
+}
+.progress-bar {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  max-width: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+
+}
+.progress-bar span {
+  display: block;
+}
+.progress-bar .bar{
+  background: #191919;
+  border-radius: 5px;
+  border-bottom-right-radius: :5px;
+  border-top-right-radius: :5px;
+}
+.progress-bar .progress {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6db3f2), color-stop(50%,#54a3ee), color-stop(51%,#3690f0), color-stop(100%,#1e69de));
+  color: #eee;
+  height: 5px;
+  width: 1%;
+  border-radius: 5px;
+  border-bottom-right-radius: :5px;
+  border-top-right-radius: :5px;
+  -moz-transition:width 0.1s linear;
+  -webkit-transition:width 0.1s linear;
+  transition:width 0.1s linear;
+}
+
+.progress-bar .percent {
+  text-align: right;
+  margin-top: -10px;
+  padding-right: 10px;
+  font-size: 19px;
+  font-family: sans-serif;
+  color: #e7e7e7;
+}
+.progress-bar .desc {
+  text-align: center;
+  margin-bottom:15px;
+  font-size: 26px;
+  font-family: sans-serif;
+  color: #e7e7e7; 
+}
+.progress-bar .desc h2{
+  margin: 25px;
+}

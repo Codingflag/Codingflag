@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="wrapper">
+    <input type="checkbox" id="first" checked/>
+    <label for="first" class="toggle">
+      <span class="slidebox"></span>
+    </label>
+  </div>
+  <div class="wrapper">
+    <input type="checkbox" id="second"/>
+    <label for="second" class="toggle">
+      <span class="slidebox"></span>
+    </label>
+  </div>
+</div>

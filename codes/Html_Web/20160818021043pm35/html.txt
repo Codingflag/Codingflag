@@ -1,0 +1,19 @@
+<!-- Inspired from Andy Walpole -->
+<div class="CustomCheckbox">
+  <div class="row">  
+    <input id="javascript" type="checkbox" name="js" value="javascript">
+    <label for="javascript">JavaScript</label>
+  </div>
+  <div class="row">
+    <input id="jquery" type="checkbox" name="js" value="jquery" checked>
+    <label for="jquery">JQuery</label>
+  </div>
+  <div class="row">
+    <input id="node" type="checkbox" name="js" value="node">
+    <label for="node">Node JS</label>
+  </div>
+  <div class="row">
+    <input id="angular" type="checkbox" name="js" value="angular">
+    <label for="angular">Angular JS</label>
+  </div>
+</div>

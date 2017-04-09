@@ -1,0 +1,58 @@
+<div id="main-sec">
+
+  <div id="sec-1">
+    <div class="menu">
+
+      <input id="menu-toggle" type="checkbox" />
+      <label class="menu-toggle-close" for="menu-toggle"></label>
+      <label class="menu-toggle-burger" for="menu-toggle"></label>
+ 
+      <nav class="menu-body">
+          <div class="left">
+            <h1>Codingflag</h1>
+              <p>Source Code Platform.</p>
+              <ul>
+                <li class="social">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                    <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                    <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+              </li>
+            </ul>  
+          </div>
+
+          <div class="right">
+            <div class="container">
+                <form method="post">
+                  <h1>Join Us</h1>
+                    <div class="form-row">
+                      <input type="text" name="firstName" placeholder="Enter First Name" required autofocus>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="lastName" placeholder="Enter Last Name" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="email" name="email" placeholder="Enter Email" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="password" name="password" placeholder="Enter Password" required>
+                    </div>
+                    <button type="submit">Sign up</button>
+                </form>
+            </div>
+          </div>
+      </nav>
+    </div>
+  </div>
+
+  <div id="sec-2">
+    <div class="front-side">
+      <div class="center-xy">
+        <span class="sub-title">Full-Screen Hidden Navigation</span>
+        <h1 class="title">Codingflag</h1>
+      </div>
+    </div>
+  </div>
+
+</div>
+

@@ -1,0 +1,72 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+.CustomCheckbox {
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  width: 500px;
+}
+.CustomCheckbox .row {
+  margin-left: 50%;
+  text-align: center;
+  display: block;
+  margin-bottom: 15px;
+}
+
+input[type=checkbox] {
+  opacity: 0;
+}
+input[type=checkbox] + label {
+  margin: 0;
+  margin-left: 22px;
+  position: relative;
+  float: left;
+  font-size: 17px;
+  font-family: sans-serif,helvetica;
+  color: #373839;
+  cursor: pointer;
+}
+
+input[type=checkbox] + label::before , input[type=checkbox] + label::after {
+  content: '';
+  position: absolute;
+  left: -39px;
+  top: -3px;
+  display: block;
+}
+/* Designing Custom Square Box width & height -> 25px */
+input[type=checkbox] + label::before {
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border: 1px solid #b1a0a5;
+}
+/* Designing Right-Tick with opacity -> 0 */ 
+input[type=checkbox] + label::after {
+  width: 30px;
+  height: 25px;
+  -moz-transform: scale(0);
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  left: -41;
+  z-index: 1;
+  opacity: 0;
+  background: url("http://codingflag.in/images/svg/right-tick.svg") no-repeat center;
+  -ms-transition: all .7s cubic-bezier(0.55, -0.55, 0.17, 2.5);
+  -webkit-transition: all .7s cubic-bezier(0.55, -0.55, 0.17, 2.5);
+  transition: all .7s cubic-bezier(0.55, -0.55, 0.17, 2.5);
+}
+
+input[type=checkbox]:checked + label::after {
+  display: block;
+  opacity: 1;
+  -moz-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}

@@ -1,0 +1,28 @@
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--
+NOTE :- Put above JQuery Library in starting of 'HEAD' tag.
+-->
+<div id="navigate">
+  
+  <div class="menu">
+    <ul>
+      <li>
+        <a>Home</a>
+      </li>
+      <li>
+        <a>Downloads</a>
+      </li>      
+      <li>
+        <a>Project</a>
+      </li>
+      <li>
+        <a>About</a>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="toggle">
+      <span class="entypo-menu icon"></span>
+  </div>
+
+</div>  

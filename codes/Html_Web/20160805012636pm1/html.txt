@@ -1,0 +1,7 @@
+<h2 id="statText">Hover the Book.</h2>
+
+<div id="book-page">
+    <div id="book-cover">
+    </div>
+</div>
+

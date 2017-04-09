@@ -1,0 +1,12 @@
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--
+NOTE :- Put above JQuery Library in starting of 'HEAD' tag.
+-->
+<div class="share">
+  <a href="#"><i class="fa fa-google-plus g-plus"></i></a>
+  <a href="#"><i class="fa fa-twitter twitter"></i></a>
+  <a href="#"><i class="fa fa-facebook facebook"></i></a>
+  <a href="#"><i class="fa fa-pinterest-p pinterest"></i></a>
+  <a href="#"><i class="fa fa-instagram instagram"></i></a>
+  <a href="#" class="center-share"><i class="fa fa-share-alt shareicon"></i></a>
+</div>

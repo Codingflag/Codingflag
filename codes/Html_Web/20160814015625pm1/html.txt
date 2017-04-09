@@ -1,0 +1,14 @@
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--
+NOTE :- Put above JQuery Library in starting of 'HEAD' tag.
+-->
+<div class="menu">
+  <i class="fa fa-bars menubar"></i>
+  <ul class="list">
+    <li><i class="fa fa-files-o"></i> Copy Data</li>
+    <li><i class="fa fa-pencil-square-o"></i> Edit Data</li>
+    <li><i class="icon-save"></i>Save New Data</li>
+    <li><i class="fa fa-trash-o"></i>Delete Post</li>
+    <li><i class="fa fa-share-square-o"></i>Share on Social Media</li>
+  </ul>
+</div>
