@@ -1,3 +1,6 @@
+body {
+	overflow-x:hidden;
+}
 .header-two-bars{
 	font:13px Arial, Helvetica, sans-serif;
 }
