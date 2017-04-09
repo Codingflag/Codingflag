@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <input type="checkbox" id="jquery" />
+    <label for="jquery">jQuery</label>
+  </div>
+  <div class="row">
+    <input type="checkbox" id="node" checked="checked" />
+    <label for="node">Node JS</label>
+  </div>
+  <div class="row">
+    <input type="checkbox" id="angular" checked="checked" disabled="disabled" />
+    <label for="angular">Angular JS</label>
+  </div>
+  <div class="row">
+      <input type="checkbox" id="react" />
+      <label for="react">React JS</label>
+  </div>
+</div>

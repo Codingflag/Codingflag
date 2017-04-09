@@ -1,0 +1,14 @@
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--
+NOTE :- Put above JQuery Library in starting of 'HEAD' tag.
+-->
+<div class="container up">
+	<h2>Star Rating</h2><br>		
+</div>
+<div class="container" id="rating">
+  <i class="fa fa-star active"></i>
+  <i class="fa fa-star active"></i>
+  <i class="fa fa-star-o"></i>
+  <i class="fa fa-star-o"></i>
+  <i class="fa fa-star-o"></i>
+</div>	

@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>Slide text on hover</h1>
+  <button data-hover="facebook.com/dsr3217"><div>Facebook</div></button>
+  <button data-hover="twitter.com/dsr3217"><div>Twitter</div></button>
+  <button data-hover="instagram.com/dsr3217"><div>Instagram</div></button>
+  <button data-hover="linkedin.com/dsr3217"><div>Linkedin</div></button>
+</div>

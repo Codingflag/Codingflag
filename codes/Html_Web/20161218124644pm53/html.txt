@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <span>WiFi</span>
+    <div class="checkbox">
+      <input type="checkbox" checked="true" id="wifi"/>
+      <label for="wifi"></label>
+    </div>
+  </div>
+  <div class="row">
+    <span>Notification</span>
+    <div class="checkbox">
+      <input type="checkbox" checked="true" id="notification"/>
+      <label for="notification"></label>
+    </div>
+  </div>  
+  <div class="row">
+    <span>Bluetooth</span>
+    <div class="checkbox">
+      <input type="checkbox" id="bluetooth"/>
+      <label for="bluetooth"></label>
+    </div>
+  </div>
+</div>

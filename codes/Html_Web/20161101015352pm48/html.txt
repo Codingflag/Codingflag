@@ -1,0 +1,8 @@
+<div class="container">
+  <img src="https://goo.gl/jNcbdo" alt="ios_logo" />
+  <div class="progress">
+    <div class="progress-bar">
+      <div class="shadow"></div>
+    </div>
+  </div>
+</div>

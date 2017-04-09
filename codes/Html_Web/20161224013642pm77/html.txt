@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="searchbar-slide">
+    <a href="#" class="search-button">
+      <i class="fa fa-search"></i>
+    </a>
+    <input type="text" placeholder="Search">
+  </div>
+</div>

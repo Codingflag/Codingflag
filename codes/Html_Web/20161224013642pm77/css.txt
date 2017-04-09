@@ -1,0 +1,95 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css';
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  background: #f3f3f3;
+  font-family: 'Montserrat', sans-serif;
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.container .searchbar-slide {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  margin-bottom: 50px;
+  overflow: hidden;
+  background: #607D8B;
+  -moz-box-shadow: 0px 0px 3px 0px #35478C;
+  -webkit-box-shadow: 0px 0px 3px 0px #35478C;
+  box-shadow: 0px 0px 3px 0px #35478C;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=$color, Direction=NaN, Strength=$blur);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.container .searchbar-slide:hover {
+  width: 300px;
+}
+.container .searchbar-slide:hover .search-button {
+  -webkit-border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 5px 5px 0px;
+}
+.container .searchbar-slide input[type="text"] {
+  float: left;
+  padding: 0;
+  width: 0px;
+  height: 60px;
+  background: #e7e7e7;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  -webkit-border-radius: 5px 0px 0px 5px;
+  border-radius: 5px 0px 0px 5px;
+  -moz-transition: all 0.52s;
+  -webkit-transition: all 0.52s;
+  transition: all 0.52s;
+}
+.container .searchbar-slide input[type="text"]:-moz-placeholder {
+  color: rgb(100,100,100);
+}
+.container .searchbar-slide input[type="text"]::-webkit-input-placeholder {
+  color: rgb(100,100,100);
+}
+.container .searchbar-slide input[type="text"]:-ms-input-placeholder {
+  color: rgb(100,100,100);
+}
+.container .searchbar-slide .search-button {
+  float: right;
+  width: 60px;
+  height: 60px;
+  padding-top: 15px;
+  background: #607D8B;
+  color: #e7e7e7;
+  text-align: center;
+  font-size: 25px;
+}
+.container .searchbar-slide .search-button:active {
+  background: #608D9A;
+  color: #e7e7e7;
+}
+.container .searchbar-slide:hover input[type="text"] {
+  padding: 0 12px;
+  width: 240px;
+}

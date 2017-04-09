@@ -1,0 +1,11 @@
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--
+NOTE :- Put above JQuery Library in starting of 'HEAD' tag.
+-->
+<div class="reg-container">
+	<div class="headingText">Register For Email Alerts</div>
+	<form class="form hidden">
+		<input type="email" id="email" name="email" placeholder="dsr3217@gmail.com" />
+		<input type="button" value="Register" />
+	</form>	
+</div>

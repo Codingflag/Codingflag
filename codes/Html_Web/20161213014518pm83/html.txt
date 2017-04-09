@@ -1,0 +1,15 @@
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script> 
+<div class="container"> 
+	<div class="row">
+		<div class="ajax-button">
+	    	<div class="fa fa-check done"></div>
+	    	<div class="fa fa-close failed"></div>
+	    	<input id="submit" class="submit" type="button" value="Submit" />
+	  	</div>
+	</div>
+	<div class="row">
+	    <div class="text-holder">
+	        <p>Ajax Submit button with smooth loading animation.</p>
+		</div>
+	</div>
+</div>

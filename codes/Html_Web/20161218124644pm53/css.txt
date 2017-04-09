@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+  font-size: 25px;
+  letter-spacing: 0.01em;
+}
+.container {
+  position: relative;
+  padding-left: 1.5em;
+  border-radius: .5em;
+  color: #888;
+}
+.container > .row {
+  padding: .7em 1.25em .7em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.container > div span {
+  padding-right: 2em;
+}
+.checkbox input {
+  display: none;
+}
+.checkbox input:checked + label {
+  background: rgba(79, 187, 228, 0.87);
+}
+.checkbox input:checked + label:before {
+  -moz-transform: translateX(1.2em);
+  -webkit-transform: translateX(1.2em);
+  transform: translateX(1.2em);
+}
+.checkbox label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-tap-highlight-color: transparent;
+  width: 2.4em;
+  height: 1.2em;
+  padding: .2em;
+  background: #bcb8b8;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 1em;
+  -webkit-transition: background .1s ease;
+  transition: background .1s ease;
+}
+.checkbox label:before {
+  content: '';
+  display: block;
+  width: 1.2em;
+  height: 1.2em;
+  background: #e7e7e7;
+  box-shadow: 3px 5px 20px -3px rgba(0, 0, 0, 0.32);
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .1s ease;
+  transition: -webkit-transform .1s ease;
+  transition: transform .1s ease;
+  transition: transform .1s ease, -webkit-transform .1s ease;
+}

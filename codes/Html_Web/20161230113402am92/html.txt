@@ -1,0 +1,7 @@
+<h1>Countdown Timer</h1>
+<div class="container" id="timer">
+  <div><span id="days"></span><p>days</p></div>
+  <div><span id="hours"></span><p>hours</p></div>
+  <div><span id="mins"></span><p>mins</p></div>
+  <div><span id="secs"></span><p>secs</p></div>
+</div>

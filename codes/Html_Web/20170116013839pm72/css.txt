@@ -1,0 +1,59 @@
+body {
+  background: #607D8B;
+  margin: 0px;
+}
+.container {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);	
+  width: 220px;
+  height: 60px;
+  cursor: pointer;
+  -moz-perspective: 500px;
+  -webkit-perspective: 500px;
+  perspective: 500px;
+}
+
+.container div.btn {
+  height: 100%;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-transition: 0.45s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  -webkit-transition: 0.45s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  transition: 0.45s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+}
+.btn:hover {
+  -moz-transform: rotateX(-90deg);	
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+}
+
+.btn span {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 5px solid #fff;
+  font-family: sans-serif;
+  line-height: 50px;
+  font-size: 19px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.btn span:nth-child(1) {
+  color: #fff;
+  -moz-transform: translate3d(0, 0, 30px);
+  -webkit-transform: translate3d(0, 0, 30px);
+  transform: translate3d(0, 0, 30px);
+}
+
+.btn span:nth-child(2) {
+  background: #fff;
+  color: #607D8B;
+  -moz-transform: rotateX(90deg) translate3d(0, 0, 30px);
+  -webkit-transform: rotateX(90deg) translate3d(0, 0, 30px);
+  transform: rotateX(90deg) translate3d(0, 0, 30px);
+}

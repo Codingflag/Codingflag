@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="modal-btn">
+    <a class="btn" href="#default-modal">Load Modal</a>
+  </div>
+</div>
+<div id="default-modal" class="modal-window">
+    <div>
+        <a href="#modal-close" title="close" class="modal-close">&times;</a>
+     	<h1>Heading of modal</h1>
+     	<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</div>
+    </div>
+</div>

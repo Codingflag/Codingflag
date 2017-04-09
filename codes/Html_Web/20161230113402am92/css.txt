@@ -1,0 +1,41 @@
+body {
+  background: #fcfcfc;
+}
+h1 {
+  text-align: center;
+  font-family: sans-serif;
+  color: #666;
+  margin-top: 50px;
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align:center;
+}
+#timer {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  color: #999;
+}
+#timer div {
+  display: inline-block;
+  width: 135px;
+  height: 135px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 25px;
+  text-align: center;
+}
+#timer div p {
+  border-top: 1px solid #a09c9c;
+  padding-top: 10px;
+  text-transform: uppercase;
+  color: #a09c9c;
+  letter-spacing: 1px;
+}
+#timer span {
+  font-size: 55px;
+  color: #171717;
+}

@@ -1,0 +1,4 @@
+  <div class="container" id="counter"></div>
+  <div style="" id="drop_zone">
+    <h1>Drag & Drop Text File Here</h1>
+  </div>

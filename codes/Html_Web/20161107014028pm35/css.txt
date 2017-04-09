@@ -1,0 +1,38 @@
+body {
+	background: #111;
+}
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+	text-align: center;
+}
+#checkmark {
+	width: 250px;
+	height: 250px;
+}
+#checkmark path{
+	stroke:#fff;
+	stroke-width:4px;
+	stroke-dasharray:1448.1546630859375;
+	stroke-dashoffset:-1448.1546630859375;
+	fill: transparent;
+	transition:stroke-dashoffset 0.8s linear 0.4s,fill 0.4s ease;
+
+}
+#checkmark path.checked  {
+	fill:#fff;
+	stroke-dashoffset: 0px;
+	transition:stroke-dashoffset 0.8s linear,fill 0.4s ease 0.8s;
+}
+.toggle-btn {
+	padding: 12px 22px;
+	background: rgb(220,220,220);
+	color: rgb(50,50,50);
+	font-size: 19px;
+	outline: none;
+	border: 2px solid #00acee;
+	border-radius: 5px;
+	box-shadow: inset -7px 0px 1px #00acee;
+}

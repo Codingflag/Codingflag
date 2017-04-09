@@ -1,0 +1,19 @@
+<div id="wrapper">
+    <a id="socialBtn" class="fbShare" href="#">
+        <span class="button">SHARE</span>
+        <span class="count">32</span>
+    </a>          
+    <a id="socialBtn" class="tweet" href="#">
+        <span class="button">TWEET</span>
+        <span class="count">17</span>
+    </a>  
+    <br><br>
+    <a id="socialBtn" class="pinIt" href="#">
+        <span class="button">PIN IT</span>
+        <span class="count">55</span>
+    </a>
+    <a id="socialBtn" class="subscribe" href="#">
+        <span class="button">SUBSCRIBE</span>
+        <span class="count">07</span>
+    </a> 
+</div>

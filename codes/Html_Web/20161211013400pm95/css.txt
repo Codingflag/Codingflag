@@ -1,0 +1,71 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,800);
+
+*, *:before, *:after{
+  box-sizing: border-box;
+  padding: 0; margin: 0;
+  color: #111;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1em/1.5;
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+html, body{
+	background: rgb(236, 240, 241);
+}
+div.container{
+	min-width: 500px;
+	margin: 6% auto;
+	text-align: center;
+}
+.container h1{
+	font-size: 3.2em;
+	padding: 35px 0 45px;
+}
+.container button {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	left: 50%;
+	margin-bottom: 20px;
+	width: 264px;
+	padding: 17px 55px;
+	background: transparent; outline: none;
+	border: 2px solid #111;
+	transform:translateX(-50%); 
+}
+.container button:hover{
+	cursor: pointer
+}
+.container button:hover:before{
+	opacity: 1; 
+	transform: translate(0,0);
+}
+.container button:before{
+	content: attr(data-hover);
+	position: absolute;
+	top: 1.22em; 
+	left: 0;
+	width: 100%;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-weight: 800;
+	font-size: 1em;
+	opacity: 0;
+	transform: translate(-100%,0);
+	-moz-transition: all 0.32s ease-in-out;
+	-webkit-transition: all 0.32s ease-in-out;
+	transition: all 0.32s ease-in-out;
+}
+.container button:hover div{
+	opacity: 0; 
+	transform: translate(100%,0);
+}
+.container button div{
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-weight: 800;
+	font-size: 1em;
+	-moz-transition: all 0.32s ease-in-out;
+	-webkit-transition: all 0.32s ease-in-out;
+	transition: all 0.32s ease-in-out;
+}

@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300);
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #EEEEEE;
+  color: #212121;
+  font-family: "Source Sans Pro";
+  font-size: 16px;
+}
+.reg-container {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width: 500px;
+}
+.reg-container .headingText {
+  display: block;
+  width: 100%;
+  padding: 28px 17px;
+  background: #5a8fc3;
+  color: #e7e7e7;
+  text-align: center;
+  text-decoration: none;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+}
+form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  maring: 0;
+  padding: 22px;
+  background: rgba(1, 9, 17, 0.76);
+}
+form input {
+  margin: 0;
+  padding: 12px;
+}
+form input[type="email"] {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: none;
+  font-size: 16px;
+  outline: #E52B50;
+}
+form input[type="email"]:focus {
+  outline: 3px solid #55acee;
+}
+form input[type="button"] {
+  margin: 0 0 0 16px;
+  padding: 0 48px;
+  background: -webkit-linear-gradient(#e84263, #e52b50);
+  background: linear-gradient(#4aacd9, #a0aff0);
+  color: #eee;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}

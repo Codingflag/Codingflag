@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="icon-inline">
+		<span class="icon facebook"><i class="fa fa-facebook"></i>
+  			<span class="popover above">Like | fb.com/codingflag</span>
+  	</span>
+	</div>
+	<div class="icon-inline">
+		<span class="icon twitter"><i class="fa fa-twitter"></i>
+  			<span class="popover above">twitter.com/codingflag</span>
+  	</span>
+	</div>
+	<div class="icon-inline">
+		<span class="icon instagram"><i class="fa fa-instagram"></i>
+  			<span class="popover above">Follow codingflag on insta</span>
+  	</span>
+	</div>
+	<div class="icon-inline">
+		<span class="icon youtube"><i class="fa fa-youtube"></i>
+  			<span class="popover above">Youtube.com/codingflag</span>
+  	</span>
+	</div>
+</div>
