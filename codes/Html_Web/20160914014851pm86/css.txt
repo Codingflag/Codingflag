@@ -1,0 +1,49 @@
+.container {
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%); 
+}
+.container .button {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: 23px 40px;
+  color: #1863d4;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  border: 2px solid #1863d4;
+  border-radius: 3px;
+  -moz-transition:all .22s linear;
+  -webkit-transition:all .22s linear;
+  transition:all .22s linear;
+}
+.container .button:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  width: 130%;
+  height: 100%;
+  right: 110%;
+  background: #1863d4;
+  color: #eee;
+  -moz-transform: skewX(-32deg);
+  -webkit-transform: skewX(-32deg);
+  transform: skewX(-32deg);
+  -moz-transition: inherit;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+.container .button span {
+  position: relative;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+.container .button:hover {	
+  color: white;
+  background: #1863d4;
+}
+.container .button:hover:before {
+  right: -10%;
+}

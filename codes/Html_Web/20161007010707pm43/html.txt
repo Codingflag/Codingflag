@@ -1,0 +1,10 @@
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="http://www.jqueryscript.net/demo/jQuery-Before-After-Image-Comparison-Plugin-Image-Reveal/dist/jquery.imageReveal.js"></script>
+
+
+<div class="container">
+	<div id="Img-Reveal" class="imageReveal"> 
+		<img src="https://goo.gl/fmISDa" title="Before" /> 
+		<img src="https://goo.gl/xVpeMD" title="After" /> 
+	</div>
+</div>

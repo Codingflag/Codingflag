@@ -1,0 +1,11 @@
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--
+NOTE :- Put above JQuery Library in starting of 'HEAD' tag.
+-->
+<div id="wrapper">
+	<div id="download">
+		<span id="button">Download</span>
+		<div id="progress"></div>
+		<div id="border"></div>
+	</div>
+</div>

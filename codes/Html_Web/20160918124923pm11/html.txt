@@ -1,0 +1,14 @@
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--
+NOTE :- Put above JQuery Library in starting of 'HEAD' tag.
+-->
+<div class="container">
+  <div class="social-btn">
+    <button class="btn-sc main-btn bars"><i class="icon-bars"></i></button>
+    <div class="social-btn-list">
+      <a href="#" class="facebook btn-sc"><i class="fa fa-facebook"></i></a><a href="#" class="twitter btn-sc"><i class="fa fa-twitter"> </i></a>
+      <a href="#" class="gplus btn-sc"><i class="fa fa-google-plus">   </i></a>
+      <a href="#" class="pinterest btn-sc"><i class="fa fa-pinterest-p"> </i></a>
+    </div>
+  </div>
+</div>

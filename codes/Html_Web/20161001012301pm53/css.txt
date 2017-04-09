@@ -1,0 +1,100 @@
+* {
+  -moz-transition: .32s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  -webkit-transition: .32s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  transition: .32s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  box-sizing: border-box;
+}
+
+body {
+  background: #b5bbbe;
+}
+.container {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+#menu-toggle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+}
+#menu-toggle:hover {
+  transform:scale(1.05);
+  background: rgba(255, 255, 255, 0.8);
+}
+#menu-toggle span {
+  display: block;
+  background: #566973;
+  border-radius: 2px;
+}
+#menu-toggle #hamburger {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+#menu-toggle #hamburger span {
+  width: 55px;
+  height: 4px;
+  position: relative;
+  top: 24px;
+  left: 22px;
+  margin: 10px 0;
+}
+#menu-toggle #hamburger span:nth-child(1) {
+  transition-delay: .5s;
+}
+#menu-toggle #hamburger span:nth-child(2) {
+  transition-delay: .625s;
+}
+#menu-toggle #hamburger span:nth-child(3) {
+  transition-delay: .75s;
+}
+#menu-toggle.open #hamburger span:nth-child(1) {
+  transition-delay: 0s;
+}
+#menu-toggle.open #hamburger span:nth-child(2) {
+  transition-delay: 0.132s;
+}
+#menu-toggle.open #hamburger span:nth-child(3) {
+  transition-delay: 0.32s;
+}
+
+
+
+#menu-toggle #close {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: rotate(45deg);
+}
+#menu-toggle #close span:nth-child(1) {
+  height: 0%;
+  width: 4px;
+  position: absolute;
+  top: 10%;
+  left: 48px;
+  transition-delay: 0s;
+}
+#menu-toggle #close span:nth-child(2) {
+  width: 0%;
+  height: 4px;
+  position: absolute;
+  left: 10%;
+  top: 48px;
+  transition-delay: .25s;
+}
+#menu-toggle.open #hamburger span {
+  width: 0%;
+}
+#menu-toggle.open #close span:nth-child(1) {
+  height: 80%;
+  transition-delay: .625s;
+}
+#menu-toggle.open #close span:nth-child(2) {
+  width: 80%;
+  transition-delay: .375s;
+}

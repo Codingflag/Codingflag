@@ -1,0 +1,88 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css';
+
+body, html {
+
+	background: #eee;
+}
+#wrapper {
+	position: absolute;
+	top: 53%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	width: 500px;
+	text-align: center;
+}
+#wrapper .social-btn {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	margin-left: 30px;
+	padding-bottom: 8px;
+	text-align: center;
+	font-size: 26px;
+	font-family: sans-serif;
+	font-weight: 400;
+	color: #fff;
+	border: none;
+	outline: none;
+	border-radius: 50%;
+	cursor: pointer;
+	transform: translate3d(0, 0, 0);
+}
+#wrapper .row {
+	display: block;
+	margin-bottom: 35px;
+}
+#wrapper .facebook {
+	box-shadow: 0 0 0 0 #e7e7e7, 0 0 0 0 rgba(90, 153, 212, 0.7);
+	background: #3a5795;
+}
+#wrapper .twitter {
+	box-shadow: 0 0 0 0 #e7e7e7, 0 0 0 0 rgba(0, 172, 238, 0.57);
+	background: #00acee;
+}
+#wrapper .gplus {
+	box-shadow: 0 0 0 0 #e7e7e7, 0 0 0 0 rgba(221, 75, 57, 0.65);
+	background: #dd4b39;
+}
+#wrapper .linkedin {
+	box-shadow: 0 0 0 0 #e7e7e7, 0 0 0 0 rgba(14, 118, 168, 0.69);
+	background: #0e76a8;
+}
+#wrapper .pintrest {
+	box-shadow: 0 0 0 0 #e7e7e7, 0 0 0 0 rgba(189, 8, 28, 0.71);
+	background: #bd081c;
+}
+#wrapper .github {
+	box-shadow: 0 0 0 0 #e7e7e7, 0 0 0 0 rgba(50, 49, 49, 0.62);
+	background: #323131;
+}
+#wrapper .tumblr {
+	box-shadow: 0 0 0 0 #e7e7e7, 0 0 0 0 rgba(54, 70, 93, 0.68);
+	background: #36465d;
+}
+#wrapper .reddit {
+	box-shadow: 0 0 0 0 #e7e7e7, 0 0 0 0 rgba(255, 69, 0, 0.69);
+	background: #ff4500;
+}
+#wrapper .social-btn i{
+	line-height: 2.2;
+}
+#wrapper .social-btn:hover {
+	animation: pulse 1.5s cubic-bezier(0.55, 0.32, 0, 1.17) infinite;
+}
+@-moz-keyframes pulse {
+  to {
+    	box-shadow: 0 0 0 10px transparent, 0 0 0 32px #eee;
+  }
+}
+@-webkit-keyframes pulse {
+  to {
+    	box-shadow: 0 0 0 10px transparent, 0 0 0 32px #eee;
+  }
+}
+@keyframes pulse {
+  to {
+   		box-shadow: 0 0 0 10px transparent, 0 0 0 32px #eee;
+  }
+}

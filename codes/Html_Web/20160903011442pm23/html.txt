@@ -1,0 +1,18 @@
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--
+NOTE :- Put above JQuery Library in starting of 'HEAD' tag.
+-->
+<div id="wrapper">
+    <div class="row">
+        <input type="range" min="0" max="100" value="25" />
+        <span></span>
+    </div>
+    <div class="row">
+        <input type="range" class="square" min="0" max="100" value="50" />
+        <span></span>
+    </div>
+    <div class="row">
+        <input type="range" class="custom" min="0" max="100" value="75" />
+        <span></span>
+    </div>
+</div>

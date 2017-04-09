@@ -1,0 +1,13 @@
+<div class="container">
+  <div id="menu-toggle">
+    <div id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div id="close">
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>

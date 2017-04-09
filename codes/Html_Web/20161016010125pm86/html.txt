@@ -1,0 +1,9 @@
+<div class="searchBox">
+    <div class="searchForm">
+        <input id="searchField" type="text" value="Search here"/>    
+        <div class="close">
+            <span class="front"></span>
+            <span class="back"></span>
+        </div>   
+    </div>
+</div>
