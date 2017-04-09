@@ -1,0 +1,12 @@
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
+</div>
+<h1>Javascript Default and Custom alert</h1>
+<button onclick="alert('Default javascript alert !!!')">Default Alert</button>
+<button onclick="Alert.render('Javascript Custom Alert !!!')">Custom Alert</button>
+<h3>web document content ...</h3>

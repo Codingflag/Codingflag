@@ -1,0 +1,6 @@
+<form class="sign-up">
+    <h1 class="sign-up-title">Login</h1>
+    <input type="text" class="sign-up-input" placeholder="Enter Username" autofocus>
+    <input type="password" class="sign-up-input" placeholder="Enter Password">
+    <input type="submit" value="Login" class="sign-up-button">
+</form>

@@ -1,0 +1,3 @@
+<section>
+	<button id="js-trigger-overlay" type="button">Hover Me !</button>
+</section>

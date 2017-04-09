@@ -1,0 +1,32 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<div class="container">
+    <div class="night"></div>
+    <div class="clock">
+     
+      <div class="center"></div>
+      <div class="arrow hour-arrow"></div>
+      <div class="arrow min-arrow"></div>
+      <div class="arrow sec-arrow"></div>
+
+	 <ul class="digits">
+        <li class="digit digit-1">1</li>
+        <li class="digit digit-2">2</li>
+        <li class="digit digit-3">3</li>
+        <li class="digit digit-4">4</li>
+        <li class="digit digit-5">5</li>
+        <li class="digit digit-6">6</li>
+        <li class="digit digit-7">7</li>
+        <li class="digit digit-8">8</li>
+        <li class="digit digit-9">9</li>
+        <li class="digit digit-10">10</li>
+        <li class="digit digit-11">11</li>
+        <li class="digit digit-12">12</li>
+      </ul>
+
+      <p class="name">Analog Clock</p>
+    </div>
+  </div>

@@ -1,0 +1,6 @@
+<div class="SocialIcons">
+  <a class="facebook" href="#"><span>Facebook</span></a>
+  <a class="twitter" href="#"><span>Twitter</span></a>
+  <a class="googleplus" href="#"><span>Google+</span></a>
+  <a class="github" href="#"><span>Github</span></a>
+</div>

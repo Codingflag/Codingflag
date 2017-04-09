@@ -1,0 +1,29 @@
+<table cellpadding=18>
+	<tr>
+		<td>
+			Only Text :
+		</td>
+		<td>
+			<input type="text" id="txt" name="txt" onkeyup="cleanNum('txt')" onkeydown="cleanNum('txt')">
+		<td>
+	</tr>
+		
+	<tr>
+		<td>
+			Only Number :
+		</td>
+		<td>
+			<input type="text" id="num" name="num" onkeyup="cleanChar('num')" onkeydown="cleanChar('num')">
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			Only Both text and numbers :
+		</td>
+		<td>
+			<input type="text" id="varchar" name="varchar" onkeyup="cleanSpecial('varchar')" onkeydown="cleanSpecial('varchar')">
+		</td>
+	</tr>
+	
+</table>

@@ -1,0 +1,1 @@
+// Javascript is Combined with HTML Code.
