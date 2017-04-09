@@ -3,6 +3,7 @@ body {
 }	
 .main-content {
 	margin-top: 35px;
+	overflow-x:hidden;
 }
 .card:nth-child(1){
 	margin-top: 0px;
@@ -69,3 +70,19 @@ body {
 	word-wrap: break-word;
 }
 
+@media all and (max-width: 668px) {
+	.main-content { 
+		padding-left:1px;
+		padding-right:1px;
+	}
+	.content .details {
+		font-size:14px;
+		word-wrap:break-word;
+	}
+	.content h2 {
+		font-size:32px;
+	}
+	.syntaxhighlighter {
+		font-size:15px;	
+	}
+}
