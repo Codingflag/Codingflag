@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Checkmark Animation using SVG & CSS3</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto+Condensed:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">	
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> 
+	<link rel="stylesheet" href="../../css/header.css"/>
+	<script type="text/javascript" src="../../js/shCore.js"></script>
+	<script type="text/javascript" src="../../js/shBrushCss.js"></script>
+	<script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../../js/shBrushPlain.js"></script>
+	<script type="text/javascript" src="../../js/shBrushXml.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/shThemeDefault.css"/>
+    <script type="text/javascript">
+        SyntaxHighlighter.config.clipboardSwf = '../../clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link rel="stylesheet" href="../styles/main.css"/	>
+</head>
+<body>
+<header class="header-two-bars">
+	<div class="header-first-bar">
+		<div class="header-limiter">
+			<h1><a href="#">Coding<span>flag</span></a></h1>
+			<nav>
+        <a href="../javascript.html">JavaScript</a>
+        <a class="selected" href="../css.html">CSS</a>
+        <a href="../api.html">API</a>
+			</nav>
+		</div>
+	</div>
+</header>
+<div class="container main-content">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-8">
+			<div class="card col-xs-12 col-sm-12 col-md-12">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<div class="content padding">
+							<h2>Checkmark Animation using SVG & CSS3</h2>
+							<p class="posted">POSTED ON <b>APRIL 4, 2017</b></p>
+							<img style="width:100%;" class="img-responsive" src="http://codingflag.in/codes/Html_Web/20161107014028pm35/preview.jpg" alt="">
+							<p class="details">
+								<br>
+							</p>
+							<div class="code htmlCode">
+								<div class="title">html</div>
+				                <pre class="brush: html" style="margin-top:-10px;">
+&lt;div class=&quot;container&quot;&gt;
+	&lt;svg id=&quot;checkmark&quot; 
+		version=&quot;1.1&quot; 
+		xmlns=&quot;http://www.w3.org/2000/svg&quot; 
+		xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; 
+		width=&quot;512&quot; 
+		height=&quot;512&quot; 
+		viewBox=&quot;0 0 512 512&quot;&gt;
+			&lt;g id=&quot;icomoon-ignore&quot;&gt;&lt;/g&gt;
+			&lt;path id=&quot;checkmarkpath&quot; d=&quot;M432 64l-240 240-112-112-80 80 192 192 320-320z&quot;&gt;&lt;/path&gt;
+	&lt;/svg&gt;
+
+	&lt;button class=&quot;toggle-btn&quot; onclick=&quot;checkmarkpath.classList.toggle('checked')&quot;&gt;Toggle&lt;/button&gt;
+&lt;/div&gt;
+								</pre> 
+							</div>
+							<div class="code cssCode">
+								<div class="title">css</div>
+				                <pre class="brush: css" style="margin-top:-10px;">
+body {
+	background: #111;
+}
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+	text-align: center;
+}
+#checkmark {
+	width: 250px;
+	height: 250px;
+}
+#checkmark path{
+	stroke:#fff;
+	stroke-width:4px;
+	stroke-dasharray:1448.1546630859375;
+	stroke-dashoffset:-1448.1546630859375;
+	fill: transparent;
+	transition:stroke-dashoffset 0.8s linear 0.4s,fill 0.4s ease;
+
+}
+#checkmark path.checked  {
+	fill:#fff;
+	stroke-dashoffset: 0px;
+	transition:stroke-dashoffset 0.8s linear,fill 0.4s ease 0.8s;
+}
+.toggle-btn {
+	padding: 12px 22px;
+	background: rgb(220,220,220);
+	color: rgb(50,50,50);
+	font-size: 19px;
+	outline: none;
+	border: 2px solid #00acee;
+	border-radius: 5px;
+	box-shadow: inset -7px 0px 1px #00acee;
+}
+				                </pre> 
+							</div>
+							<div class="codepen-embed">
+								<p data-height="365" data-theme-id="dark" data-slug-hash="zZVYzo" data-default-tab="css,result" data-user="dsr" data-embed-version="2" data-pen-title="Checkmark Animation ( SVG )" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/dsr/pen/zZVYzo/">Checkmark Animation ( SVG )</a> by Darshan Rajadhyaksha (<a href="http://codepen.io/dsr">@dsr</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-4">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

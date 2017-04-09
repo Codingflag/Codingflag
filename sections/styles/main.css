@@ -1,0 +1,71 @@
+body {
+	background: #eeeeee;
+}	
+.main-content {
+	margin-top: 35px;
+}
+.card:nth-child(1){
+	margin-top: 0px;
+}
+.card {
+	padding: 0px;
+	background: #fff;
+	margin:15px 0px;
+	/*padding: 6px;*/
+}
+.card div:nth-child(1) img{
+	width: calc(100% - 2px);
+}
+.content {
+	padding: 10px 15px 25px;
+}
+.content h2 {
+	color:#ed4a29;
+	font-size: 45px;
+	font-weight: 300;
+	font-family: 'Roboto Condensed','Open Sans',sans-serif;
+}
+.content p.posted {
+	font-size: 14px;
+	color: rgb(170,170,170);
+	margin-top: 15px;
+}
+.content .details {
+	margin:10px 0px;
+	font-size: 16px;
+	color: rgb(70,70,70);
+	font-family: 'Open Sans',helvetica,sans-serif;
+}
+.content div a.button {
+	font-size: 18px;
+	font-family: 'Roboto Condensed','Open Sans',sans-serif;
+	padding: 10px 17px;
+	color: #eee;
+	background: #55acee;
+	text-decoration: none;
+}
+.content div a.button:hover {
+	text-decoration: none;
+}
+.content .code div.title {
+	width:100%;
+	color:#eee;
+	padding:5px 15px;	
+	text-transform: uppercase;
+	font-family: 'Open Sans',sans-serif;
+}
+.content .code.htmlCode {
+	background:#22b56b;
+}
+.content .code.jsCode {
+	background:#00acee;
+}
+.content .code.cssCode {
+	background:#da4f33;
+}
+.syntaxhighlighter {
+	margin:0.1em 0 2em 0;
+	font-size: 17px;
+	word-wrap: break-word;
+}
+

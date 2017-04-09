@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Simple Countdown Timer</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto+Condensed:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">	
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> 
+	<link rel="stylesheet" href="../../css/header.css"/>
+	<script type="text/javascript" src="../../js/shCore.js"></script>
+	<script type="text/javascript" src="../../js/shBrushCss.js"></script>
+	<script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../../js/shBrushPlain.js"></script>
+	<script type="text/javascript" src="../../js/shBrushXml.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/shThemeDefault.css"/>
+    <script type="text/javascript">
+        SyntaxHighlighter.config.clipboardSwf = '../../clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link rel="stylesheet" href="../styles/main.css"/	>
+</head>
+<body>
+<header class="header-two-bars">
+	<div class="header-first-bar">
+		<div class="header-limiter">
+			<h1><a href="#">Coding<span>flag</span></a></h1>
+			<nav>
+        <a class="selected" href="../javascript.html">JavaScript</a>
+        <a href="../css.html">CSS</a>
+        <a href="../api.html">API</a>
+			</nav>
+		</div>
+	</div>
+</header>
+<div class="container main-content">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-8">
+			<div class="card col-xs-12 col-sm-12 col-md-12">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<div class="content padding">
+							<h2>Simple Countdown Timer</h2>
+							<p class="posted">POSTED ON <b>APRIL 4, 2017</b></p>
+							<img style="width:100%;" class="img-responsive" src="http://codingflag.in/codes/Html_Web/20161230113402am92/preview.jpg" alt="">
+							<p class="details">
+							</p>
+							<div class="code htmlCode">
+								<div class="title">html</div>
+				                <pre class="brush: html" style="margin-top:-10px;">
+&lt;h1&gt;Countdown Timer&lt;/h1&gt;
+&lt;div class=&quot;container&quot; id=&quot;timer&quot;&gt;
+  &lt;div&gt;&lt;span id=&quot;days&quot;&gt;&lt;/span&gt;&lt;p&gt;days&lt;/p&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;span id=&quot;hours&quot;&gt;&lt;/span&gt;&lt;p&gt;hours&lt;/p&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;span id=&quot;mins&quot;&gt;&lt;/span&gt;&lt;p&gt;mins&lt;/p&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;span id=&quot;secs&quot;&gt;&lt;/span&gt;&lt;p&gt;secs&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+								</pre> 
+							</div>
+							<div class="code jsCode">
+								<div class="title">JavaScript</div>
+				                <pre class="brush: js" style="margin-top:-10px;">
+var daysDiv = document.getElementById('days');
+var hourDiv = document.getElementById('hours');
+var minsDiv = document.getElementById('mins');
+var secsDiv = document.getElementById('secs');
+var compareDate = new Date();
+compareDate.setMinutes(compareDate.getMinutes()+1700);
+/*
+Set specific date like,
+var compareDate = new Date(&quot;12/31/16 23:59:00&quot;);
+*/
+var countDown = function() {
+  var now = new Date().getTime();
+  var difference = compareDate.getTime() - now;
+  if (difference &lt;= 0) {
+    clearInterval(timer);
+  } else {
+    var seconds = Math.floor(difference / 1000);
+    var minutes = Math.floor(seconds / 60);
+    var hours = Math.floor(minutes / 60);
+    var days = Math.floor(hours / 24);
+    seconds %= 60;
+    minutes %= 60;
+    hours %= 24;
+    daysDiv.innerText = days;
+    hourDiv.innerText = hours;
+    minsDiv.innerText = minutes;
+    secsDiv.innerText = seconds;
+  }
+}
+var timer = setInterval(countDown, 1000);
+				                </pre> 
+							</div>
+							<div class="code cssCode">
+								<div class="title">css</div>
+				                <pre class="brush: css" style="margin-top:-10px;">
+body {
+  background: #fcfcfc;
+}
+h1 {
+  text-align: center;
+  font-family: sans-serif;
+  color: #666;
+  margin-top: 50px;
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align:center;
+}
+#timer {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  color: #999;
+}
+#timer div {
+  display: inline-block;
+  width: 135px;
+  height: 135px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 25px;
+  text-align: center;
+}
+#timer div p {
+  border-top: 1px solid #a09c9c;
+  padding-top: 10px;
+  text-transform: uppercase;
+  color: #a09c9c;
+  letter-spacing: 1px;
+}
+#timer span {
+  font-size: 55px;
+  color: #171717;
+}
+				                </pre> 
+							</div>
+							<div class="codepen-embed">
+								<p data-height="465" data-theme-id="dark" data-slug-hash="LWKPab" data-default-tab="result" data-user="dsr" data-embed-version="2" data-pen-title="Simple Countdown Timer" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/dsr/pen/LWKPab/">Simple Countdown Timer</a> by Darshan Rajadhyaksha (<a href="http://codepen.io/dsr">@dsr</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-4">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

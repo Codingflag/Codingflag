@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Circle Packed Image Transformation using p5.js</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto+Condensed:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">	
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> 
+	<link rel="stylesheet" href="../../css/header.css"/>
+	<script type="text/javascript" src="../../js/shCore.js"></script>
+	<script type="text/javascript" src="../../js/shBrushCss.js"></script>
+	<script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../../js/shBrushPlain.js"></script>
+	<script type="text/javascript" src="../../js/shBrushXml.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/shThemeDefault.css"/>
+    <script type="text/javascript">
+        SyntaxHighlighter.config.clipboardSwf = '../../clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link rel="stylesheet" href="../styles/main.css"/	>
+</head>
+<body>
+<header class="header-two-bars">
+	<div class="header-first-bar">
+		<div class="header-limiter">
+			<h1><a href="#">Coding<span>flag</span></a></h1>
+			<nav>
+        <a class="selected" href="../javascript.html">JavaScript</a>
+        <a href="../css.html">CSS</a>
+        <a href="../api.html">API</a>
+			</nav>
+		</div>
+	</div>
+</header>
+<div class="container main-content">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-8">
+			<div class="card col-xs-12 col-sm-12 col-md-12">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<div class="content padding">
+							<h2>Circle Packed Image Transform</h2>
+							<p class="posted">POSTED ON <b>APRIL 4, 2017</b></p>
+							<img style="width:100%;" class="img-responsive" src="http://codingflag.in/codes/Html_Web/20170111020630pm7/preview.jpg" alt="">
+							<p class="details">
+								Libraries Required 
+								<br>
+								p5.js - <a href="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js">https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js</a>
+							</p>
+							<div class="code htmlCode">
+								<div class="title">html</div>
+				                <pre class="brush: html" style="margin-top:-10px;">
+&lt;div class=&quot;uploader&quot;&gt;
+	&lt;input type=&quot;file&quot; id=&quot;filePhoto&quot; /&gt;
+	&lt;p&gt;Drag &amp; drop image here !!&lt;/p&gt;
+&lt;/div&gt;
+								</pre> 
+							</div>
+							<div class="code jsCode">
+								<div class="title">JavaScript</div>
+				                <pre class="brush: js" style="margin-top:-10px;">
+var circles = [];
+var img;
+var loadedImage = false;
+
+function setup(){
+	createCanvas(465,600);
+}
+
+function draw(){
+	background(50);
+	if(loadedImage){
+		for(var i=0;i&lt;50;i++){
+			var obj = genCircle();
+			if(obj !== null){
+				circles.push(obj);
+			} else {
+				i--;
+			}
+		}	
+		for(var i=0;i&lt;circles.length;i++){
+			if(circles[i].isGrowing){
+				if(circles[i].checkBoundry()){
+					circles[i].isGrowing = false;
+				} else {
+					for(var j=0;j&lt;circles.length;j++){
+						if(circles[i]!=circles[j]){
+							var d = dist(circles[i].x,circles[i].y,circles[j].x,circles[j].y);
+							if(d &lt; circles[i].r+circles[j].r){
+								circles[i].isGrowing = false;
+							}
+						}
+					}
+				}
+			}
+			circles[i].grow();
+			circles[i].display();
+	}
+}
+} 
+function Circle(posX,posY,r_,g_,b_,a_) {
+	this.x = posX;
+	this.y = posY;
+	this.r =1;
+
+	this.red = r_;
+	this.green = g_;
+	this.blue = b_;
+	this.alpha = a_;
+
+	this.isGrowing = true;
+	this.grow = function(){
+		if(this.isGrowing){	
+			this.r+=0.15;
+		}
+	}
+
+	this.checkBoundry = function(){
+		 if(this.x+this.r&gt;width||this.x-this.r&lt;0||this.y+this.r&gt;height||this.y-this.r&lt;0) {
+		 	return true;
+		 } else {
+		 	return false;
+		 }
+	}
+	
+	this.display = function(){
+		noStroke();
+		fill(this.red,this.green,this.blue,this.alpha);
+		ellipse(this.x,this.y,this.r*2,this.r*2);
+	}
+}
+
+
+function genCircle() {
+	var x = Math.trunc(random(img.width));
+	var y = Math.trunc(random(img.height));
+	var valid = true;
+	for(var i=0;i&lt;circles.length;i++){
+		var d = dist(x,y,circles[i].x,circles[i].y);
+		if(d&lt;circles[i].r){
+			valid = false;
+			break;
+		}
+	}
+	if(valid){
+		var index = (x+y*img.width)*4;
+
+		var r = img.pixels[index+0];
+		var g = img.pixels[index+1];
+		var b = img.pixels[index+2];
+		var a = img.pixels[index+3];
+
+		return new Circle(x,y,r,g,b,a);
+	} else {
+		return null;
+	}
+}
+
+var imageLoader = document.getElementById('filePhoto');
+imageLoader.addEventListener('change', handleImage, false);
+function handleImage(e) {
+    var reader = new FileReader();
+    reader.onload = function (event) {
+        img = loadImage(event.target.result,function(){
+  			img.loadPixels();
+  			loadedImage = true;
+  			resizeCanvas(img.width,img.height);
+  			document.getElementsByTagName('canvas')[0].style.display = &quot;block&quot;;
+  			document.getElementsByClassName('uploader')[0].style.display = &quot;none&quot;;
+  		});
+    }
+    reader.readAsDataURL(e.target.files[0]);
+}
+document.getElementsByClassName('uploader')[0].style.lineHeight = innerHeight-10+'px';
+				                </pre> 
+							</div>
+							<div class="code cssCode">
+								<div class="title">css</div>
+				                <pre class="brush: css" style="margin-top:-10px;">
+body {
+  margin: 0px;
+}
+.uploader {
+    position:absolute; 
+    width:100%; 
+    height:100%;
+    background:#f3f3f3; 
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 45px;
+    font-family: sans-serif;
+    color:rgb(120,120,120);
+    font-weight: 600;
+}
+.uploader p {
+  margin-top: -20px;
+}
+#filePhoto{
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    z-index:2;
+    opacity:0;
+    cursor:pointer;
+}
+canvas {
+  display: none;
+}
+				                </pre> 
+							</div>
+							<div class="codepen-embed">
+								<p data-height="365" data-theme-id="dark" data-slug-hash="ryEBpg" data-default-tab="result" data-user="dsr" data-embed-version="2" data-pen-title="Circle Packed Image Transform" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/dsr/pen/ryEBpg/">Circle Packed Image Transform</a> by Darshan Rajadhyaksha (<a href="http://codepen.io/dsr">@dsr</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-4">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

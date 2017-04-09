@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic Paint Application using p5.js</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto+Condensed:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">	
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> 
+	<link rel="stylesheet" href="../../css/header.css"/>
+	<script type="text/javascript" src="../../js/shCore.js"></script>
+	<script type="text/javascript" src="../../js/shBrushCss.js"></script>
+	<script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../../js/shBrushPlain.js"></script>
+	<script type="text/javascript" src="../../js/shBrushXml.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/shThemeDefault.css"/>
+    <script type="text/javascript">
+        SyntaxHighlighter.config.clipboardSwf = '../../clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link rel="stylesheet" href="../styles/main.css"/	>
+</head>
+<body>
+<header class="header-two-bars">
+	<div class="header-first-bar">
+		<div class="header-limiter">
+			<h1><a href="#">Coding<span>flag</span></a></h1>
+			<nav>
+        <a class="selected" href="../javascript.html">JavaScript</a>
+        <a href="../css.html">CSS</a>
+        <a href="../api.html">API</a>
+			</nav>
+		</div>
+	</div>
+</header>
+<div class="container main-content">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-8">
+			<div class="card col-xs-12 col-sm-12 col-md-12">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<div class="content padding">
+							<h2>Basic Paint Application using p5.js</h2>
+							<p class="posted">POSTED ON <b>APRIL 4, 2017</b></p>
+							<img style="width:100%;" class="img-responsive" src="http://codingflag.in/codes/Html_Web/20170108124805pm87/preview.jpg" alt="">
+							<p class="details">
+								Libraries Required 
+								<br>
+								p5.js - <a href="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js">https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js</a>
+							</p>
+							<div class="code htmlCode">
+								<div class="title">html</div>
+				                <pre class="brush: html" style="margin-top:-10px;">
+&lt;div id=&quot;sidebar&quot;&gt;
+	&lt;div class=&quot;row heading&quot;&gt;
+		&lt;h2&gt;Paint&lt;/h2&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;row&quot;&gt;
+		&lt;p&gt;Brush Color&lt;/p&gt;
+		&lt;input type=&quot;color&quot; id=&quot;brushColor&quot;&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;row&quot;&gt;
+		&lt;p&gt;Background Color&lt;/p&gt;
+		&lt;input type=&quot;color&quot; id=&quot;bgColor&quot;&gt; 
+	&lt;/div&gt;
+	&lt;div class=&quot;row&quot;&gt;
+		&lt;p&gt;Size&lt;/p&gt;
+		&lt;input type=&quot;range&quot; id=&quot;sizeRange&quot; min=&quot;2&quot; max=&quot;20&quot; value=&quot;5&quot; steps=&quot;2&quot;&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;row&quot;&gt;
+		&lt;p&gt;Pen Style&lt;/p&gt;
+		&lt;div&gt;&lt;span&gt;Pencil&lt;/span&gt;&lt;input type=&quot;checkbox&quot; id=&quot;pencil&quot; checked=&quot;true&quot;&gt;&lt;/div&gt;
+		&lt;div&gt;&lt;span&gt;Brush&lt;/span&gt;&lt;input type=&quot;checkbox&quot; id=&quot;brush&quot;&gt;&lt;/div&gt;
+		&lt;div&gt;&lt;span&gt;Square&lt;/span&gt;&lt;input type=&quot;checkbox&quot; id=&quot;square&quot;&gt;&lt;/div&gt;
+		&lt;div&gt;&lt;span&gt;Eraser&lt;/span&gt;&lt;input type=&quot;checkbox&quot; id=&quot;eraser&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;row&quot;&gt;
+		&lt;p&gt;&lt;a href=&quot;#&quot; id=&quot;saveCanvas&quot;&gt;Save &amp; Clear&lt;/a&gt;&lt;/p&gt;
+		&lt;p&gt;&lt;a href=&quot;#&quot; id=&quot;clearCanvas&quot;&gt;Clear&lt;/a&gt;&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+								</pre> 
+							</div>
+							<div class="code jsCode">
+								<div class="title">JavaScript</div>
+				                <pre class="brush: js" style="margin-top:-10px;">
+var brushColor; 
+var bgColor;
+var drawSize;
+var penStyle;
+var paint;
+
+
+function _(id){
+	return document.getElementById(id);
+}
+function setup() {
+	paint = createCanvas(innerWidth-250,innerHeight);
+
+	brushColor = '#151718';
+	bgColor = '#c8c8c8';
+	drawSize = 3;
+	penStyle = 'pencil';
+
+	_('brushColor').value = brushColor;
+	_('bgColor').value = bgColor;
+	_('brush').checked = false;
+	_('square').checked = false;
+	_('eraser').checked = false;
+	document.getElementsByTagName('canvas')[0].style.cursor = &quot;crosshair&quot;;
+
+	_('brushColor').onchange = function(){
+		brushColor = _('brushColor').value;
+	};
+	_('bgColor').onchange = function(){
+		bgColor = _('bgColor').value;
+		document.body.style.background = bgColor;
+	};
+	_('sizeRange').onchange = function(){
+		var size = map(_('sizeRange').value,2,20,4,20);
+		drawSize = size;
+	}
+
+	_('pencil').onchange = function(){
+		penStyle = 'pencil';
+		_('brush').checked = false;
+		_('square').checked = false;
+		_('eraser').checked = false;
+		document.getElementsByTagName('canvas')[0].style.cursor = &quot;crosshair&quot;;
+	}
+	_('brush').onchange = function(){
+		penStyle = 'brush';
+		_('square').checked = false;
+		_('pencil').checked = false;
+		_('eraser').checked = false;
+		document.getElementsByTagName('canvas')[0].style.cursor = &quot;crosshair&quot;;
+	}
+	_('square').onchange = function(){
+		penStyle = 'square';
+		_('brush').checked = false;
+		_('pencil').checked = false;
+		_('eraser').checked = false;
+		document.getElementsByTagName('canvas')[0].style.cursor = &quot;crosshair&quot;;
+	}
+	_('eraser').onchange = function(){
+		penStyle = 'eraser';
+		_('brush').checked = false;
+		_('pencil').checked = false;
+		_('square').checked = false;
+		document.getElementsByTagName('canvas')[0].style.cursor = &quot;cell&quot;;
+	}
+	_('clearCanvas').onclick = function(ev){
+		ev.preventDefault();
+		if(confirm(&quot;Do you want to clear paint&quot;)){
+			setup();
+			document.body.style.background = '#c8c8c8';
+		} else {
+			return ;
+		}
+	}
+	_('saveCanvas').onclick = function(ev){
+		ev.preventDefault();
+		saveCanvas(paint,'sketch','png');
+		setup();
+		document.body.style.background = '#c8c8c8';
+	}
+
+	window.onresize = function(){
+		document.getElementsByTagName('canvas')[0].style.width = innerWidth-250;
+		document.getElementsByTagName('canvas')[0].style.height = innerHeight;
+	}
+}
+
+function mouseDragged(){
+	fill(brushColor);
+	stroke(brushColor);
+	if(penStyle === 'brush'){
+		ellipse(mouseX,mouseY,drawSize,drawSize);
+	} else if(penStyle === 'pencil') {
+		line(pmouseX,pmouseY,mouseX,mouseY);
+	} else if(penStyle === 'square'){
+		rect(mouseX,mouseY,drawSize/2,drawSize/2);
+	} else if(penStyle === 'eraser'){
+		stroke('#c8c8c8');
+		fill('#c8c8c8');
+		rect(mouseX,mouseY,drawSize/1.2,drawSize/1.2);
+	}
+}
+
+				                </pre> 
+							</div>
+							<div class="code cssCode">
+								<div class="title">css</div>
+				                <pre class="brush: css" style="margin-top:-10px;">
+body{
+	margin: 0px;
+	padding: 0px;
+	max-width: 100%;
+	max-height: 100%;
+	background: #c8c8c8;
+	font-family: sans-serif;
+	overflow: hidden;
+}
+
+#sidebar {
+	position: fixed;
+	float: left;
+	width: 250px;
+	height: 100vh;
+	background: #0a141e;
+	padding: 15px;
+	color: #eee;
+}
+#sidebar .heading h2 {
+	margin-top: -10px;
+	font-size: 32px;
+	color: rgb(230,230,230);
+}
+#sidebar .row {
+	margin:30px 0px;
+	padding: 0px 8px;
+}
+#sidebar .row p,span {
+	font-size: 18px;
+	color: rgb(230,230,230);
+	font-weight: 400;
+	margin-bottom: 8px;
+}
+#sidebar .row div {
+	margin-bottom: 3px;
+}
+#sidebar .row span {
+	font-size: 15px;
+	position: absolute;
+	margin-left: 30px;
+	width: 50px;
+}
+#sidebar .row div:nth-child(3){
+	margin-top: 3px;
+}
+#sidebar .row a#clearCanvas,a#saveCanvas{
+	cursor: pointer;
+	color: rgb(230,230,230);
+}
+
+#sidebar input[type=range] {
+    margin: auto;
+    outline: none;
+    padding: 0;
+    width: 140px;
+    height: 6px;
+    background-color: rgb(250,250,250);
+    box-shadow: inset 1px 1px 3px #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    vertical-align: middle;
+}
+#sidebar input[type=range]::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+#sidebar input[type=range]::-moz-range-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+#sidebar input[type=range]::-webkit-slider-thumb {
+    width: 22px;
+    height: 22px;
+    border: 0;
+    background: #e7e7e7;
+    border-radius: 100%;
+    box-shadow: 2px 8px 3px rgba(5,5,5,0.32);
+    -webkit-appearance: none;
+}
+ #sidebar input[type=range]::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border: 0;
+    background: #e7e7e7;
+    border-radius: 100%;
+    box-shadow: 2px 8px 3px rgba(5,5,5,0.32);
+    -webkit-appearance: none;
+}
+
+canvas {
+	float: right;
+}
+				                </pre> 
+							</div>
+							<div class="codepen-embed">
+								<p data-height="500" data-theme-id="dark" data-slug-hash="peXzyK" data-default-tab="result" data-user="dsr" data-embed-version="2" data-pen-title="Paint p5.js" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/dsr/pen/peXzyK/">Paint p5.js</a> by Darshan Rajadhyaksha (<a href="http://codepen.io/dsr">@dsr</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-4">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

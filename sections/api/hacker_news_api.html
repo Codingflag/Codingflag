@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hacker News API Demo</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto+Condensed:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">	
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> 
+	<link rel="stylesheet" href="../../css/header.css"/>
+	<script type="text/javascript" src="../../js/shCore.js"></script>
+	<script type="text/javascript" src="../../js/shBrushCss.js"></script>
+	<script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../../js/shBrushPlain.js"></script>
+	<script type="text/javascript" src="../../js/shBrushXml.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/shThemeDefault.css"/>
+    <script type="text/javascript">
+        SyntaxHighlighter.config.clipboardSwf = '../../clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link rel="stylesheet" href="../styles/main.css"/	>
+</head>
+<body>
+<header class="header-two-bars">
+	<div class="header-first-bar">
+		<div class="header-limiter">
+			<h1><a href="#">Coding<span>flag</span></a></h1>
+			<nav>
+				<a href="../javascript.html">JavaScript</a>
+				<a href="../css.html">CSS</a>
+				<a class="selected" href="../api.html">API</a>
+			</nav>
+		</div>
+	</div>
+</header>
+<div class="container main-content">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-8">
+			<div class="card col-xs-12 col-sm-12 col-md-12">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<div class="content padding">
+							<h2>Hacker News API Demo</h2>
+							<p class="posted">POSTED ON <b>APRIL 4, 2017</b></p>
+							<img style="width:100%;" class="img-responsive" src="https://rayli.net/blog/wp-content/uploads/2016/02/hacker_news_for_mobile.jpg" alt="">
+							<p class="details">
+								<br>
+								<a href="https://hn.algolia.com/api">Get More Info - API Documentation</a>
+								<br>
+							</p>
+							<div class="code htmlCode">
+								<div class="title">html</div>
+				                <pre class="brush: html" style="margin-top:-10px;">
+&lt;div id=&quot;searchbar&quot;&gt;
+  &lt;input type=&quot;text&quot; id=&quot;search&quot; placeholder=&quot;Search News&quot;/&gt;
+  &lt;button onclick=&quot;getNews();&quot;&gt;Search&lt;/button&gt;
+&lt;/div&gt;
+&lt;div id=&quot;news&quot;&gt;&lt;/div&gt;
+								</pre> 
+							</div>
+							<div class="code jsCode">
+								<div class="title">JavaScript</div>
+				                <pre class="brush: js" style="margin-top:-10px;">
+var news = document.getElementById('news');
+
+function getAjaxObject(url){
+  var ajax = new XMLHttpRequest();
+  ajax.open(&quot;GET&quot;,url,true);
+  ajax.send();
+  return ajax;
+}
+function getNews(){
+  var searchTerm = document.getElementById('search').value;
+  news.innerHTML = 'Searching....';
+  var ajax = getAjaxObject('https://hn.algolia.com/api/v1/search_by_date?query='+searchTerm);
+  ajax.onreadystatechange = function(){
+    if(this.readyState === 4 &amp;&amp; this.status === 200){
+      var response = this.responseText;
+      var newsObj = JSON.parse(response);
+      var News,htmCode ='';
+      for(News in newsObj.hits){
+        if(newsObj.hits[News].story_title == null) { continue; }
+        htmCode += '&lt;div&gt;&lt;p class=&quot;title&quot;&gt;'+newsObj.hits[News].story_title+'&lt;/p&gt;&lt;p class=&quot;comment&quot;&gt;'+newsObj.hits[News].comment_text+'&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;'+newsObj.hits[News].story_url+'&quot;&gt;Get more info here&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;';
+      }
+      news.innerHTML = htmCode;
+    }
+  }
+}
+				                </pre> 
+							</div>
+							<div class="code cssCode">
+								<div class="title">css</div>
+				                <pre class="brush: css" style="margin-top:-10px;">
+body {
+  margin:0px;
+  font-family:sans-serif;
+}
+#searchbar {
+  padding:10px;
+}
+#news div {
+  padding:5px;
+  border-top:2px solid #eee;
+}
+#news div:nth-child(even) {
+  background:#e7e7e7;
+}
+#news div:nth-child(odd) {
+  background:#f7f7f7;
+}
+#news div .title {
+  font-size:22px;
+  color:red;
+}
+				                </pre> 
+							</div>
+							<div class="codepen-embed">
+								<p data-height="365" data-theme-id="dark" data-slug-hash="zZVWZq" data-default-tab="result" data-user="dsr" data-embed-version="2" data-pen-title="Hacker News API " data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/dsr/pen/zZVWZq/">Hacker News API </a> by Darshan Rajadhyaksha (<a href="http://codepen.io/dsr">@dsr</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-4">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

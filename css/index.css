@@ -1,0 +1,93 @@
+body {
+	background: #eeeeee;
+}	
+.main-content {
+	margin-top: 40px;
+}
+.card {
+	padding: 0px;
+	background: #fff;
+	margin:15px 0px;
+}
+.card:nth-child(1) {
+	margin-top: 0px;
+}
+.card div:nth-child(1) img{
+	width: calc(100% - 2px);
+}
+.content {
+	padding: 10px 15px 25px;
+}
+.content h2 {
+	color:#ed4a29;
+	font-size: 42px;
+	font-weight: 300;
+	font-family: 'Roboto Condensed','Open Sans',sans-serif;
+}
+.content p.posted {
+	font-size: 14px;
+	color: rgb(170,170,170);
+	margin-top: 15px;
+}
+.content .details {
+	font-size: 16px;
+	color: rgb(70,70,70);
+	font-family: 'Open Sans',helvetica,sans-serif;
+}
+.content div a.button {
+	font-size: 18px;
+	font-family: 'Roboto Condensed','Open Sans',sans-serif;
+	padding: 10px 17px;
+	color: #eee;
+	background: #55acee;
+	text-decoration: none;
+}
+.content div a.button:hover {
+	text-decoration: none;
+}
+
+.socialIcons div{
+	height: 60px;
+	text-align: center;
+	background: #aaa;
+	line-height: 60px;
+	font-size: 25px;
+}
+.socialIcons div a{
+	color: #f6f6f6;
+}
+.socialIcons div:nth-child(1){
+	background: #323131;
+}
+.socialIcons div:nth-child(2){
+	background: #3a5795;
+}
+.socialIcons div:nth-child(3){
+	background: #151719;
+}
+.socialIcons div:nth-child(4){
+	background: #00acee;
+}
+.socialIcons div:nth-child(5){
+	background: #38678e;
+}
+.socialIcons div:nth-child(6){
+	background: #dd4b39;
+}
+
+@media all and (max-width: 667px) {
+.content h2 {
+	font-size: 30px;
+}	
+.content div a.button {
+	position: relative;
+	top:5px;
+	padding: 6px 17px;
+}
+.socialIcons div{
+	margin-top: -15px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 22px;
+}
+}

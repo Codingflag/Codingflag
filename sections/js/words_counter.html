@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Words Counter & Simple Analysis</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto+Condensed:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">	
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> 
+	<link rel="stylesheet" href="../../css/header.css"/>
+	<script type="text/javascript" src="../../js/shCore.js"></script>
+	<script type="text/javascript" src="../../js/shBrushCss.js"></script>
+	<script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../../js/shBrushPlain.js"></script>
+	<script type="text/javascript" src="../../js/shBrushXml.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/shThemeDefault.css"/>
+    <script type="text/javascript">
+        SyntaxHighlighter.config.clipboardSwf = '../../clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link rel="stylesheet" href="../styles/main.css"/	>
+</head>
+<body>
+<header class="header-two-bars">
+	<div class="header-first-bar">
+		<div class="header-limiter">
+			<h1><a href="#">Coding<span>flag</span></a></h1>
+			<nav>
+        <a class="selected" href="../javascript.html">JavaScript</a>
+        <a href="../css.html">CSS</a>
+        <a href="../api.html">API</a>
+			</nav>
+		</div>
+	</div>
+</header>
+<div class="container main-content">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-8">
+			<div class="card col-xs-12 col-sm-12 col-md-12">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<div class="content padding">
+							<h2>Words Counter & Simple Analysis</h2>
+							<p class="posted">POSTED ON <b>APRIL 4, 2017</b></p>
+							<img style="width:100%;" class="img-responsive" src="http://codingflag.in/codes/Html_Web/20170104014645pm44/preview.jpg" alt="">
+							<p class="details">
+								<br>
+							</p>
+							<div class="code htmlCode">
+								<div class="title">html</div>
+				                <pre class="brush: html" style="margin-top:-10px;">
+&lt;div class=&quot;container&quot; id=&quot;counter&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;drop_zone&quot;&gt;
+    &lt;h1&gt;Drag &amp; Drop Text File Here&lt;/h1&gt;
+&lt;/div&gt;
+								</pre> 
+							</div>
+							<div class="code jsCode">
+								<div class="title">JavaScript</div>
+				                <pre class="brush: js" style="margin-top:-10px;">
+function countWords(){
+  var allwords = [];
+  var counts = {};
+  var txt = arguments[0];
+  if(txt === undefined || txt.length &lt;= 2) {
+    return false;
+  }
+  var keys = [];
+  var data = '';
+  var nonword = [
+    'the','a','in','on','it','an','of','and','to','by','is','from','at','are','as','that'
+  ];
+  allwords = txt.split(/\b\W+\b/);
+  for(var i=0;i&lt;allwords.length;i++){
+    var word = allwords[i].toLowerCase();
+    if(/\b\d+\b/.test(word) === false &amp;&amp;
+      nonword.findIndex(function(a){
+        return word === a;
+      }) === -1 &amp;&amp;
+      word.length &gt;= 2) {
+        if(counts[word] === undefined){
+          counts[word] = 1;
+          keys.push(word);
+        } else {
+          counts[word] += 1;
+        }
+    }
+  }
+  keys.sort(function(a,b){
+    return -(counts[a]-counts[b]);
+  });
+  for(var i=0;i&lt;20;i++){
+    data += &quot;&lt;div class='row'&gt;&quot;;
+    data += '&lt;span&gt;'+keys[i] + '&lt;/span&gt;';
+    var percentage = Math.round((counts[keys[i]]/allwords.length)*5000);
+    data += '&lt;span style=&quot;width:'+percentage+'px;&quot;&gt;&lt;/span&gt;';
+    data += '&lt;/div&gt;';
+  }
+  return data;
+}
+
+
+/*Drag and Drop*/
+
+function handleFileSelect(evt) {
+  evt.stopPropagation();
+  evt.preventDefault();
+  var files = evt.dataTransfer.files;
+  var reader = new FileReader();
+  reader.onload = function(event) {
+       if(countWords(event.target.result) !== false){
+         document.getElementById('drop_zone').style.display = &quot;none&quot;;
+         document.getElementById('counter').innerHTML = countWords(event.target.result);
+       } else {
+         return ;
+       }
+  }
+  reader.readAsText(files[0],&quot;UTF-8&quot;);
+}
+
+function handleDragOver(evt) {
+  evt.stopPropagation();
+  evt.preventDefault();
+  evt.dataTransfer.dropEffect = 'copy';
+}
+  var dropZone = document.getElementById('drop_zone');
+  dropZone.addEventListener('dragover', handleDragOver, false);
+  dropZone.addEventListener('drop', handleFileSelect, false);
+				                </pre> 
+							</div>
+							<div class="code cssCode">
+								<div class="title">css</div>
+				                <pre class="brush: css" style="margin-top:-10px;">
+body {
+  font-family: sans-serif;
+}
+@keyframes anit {
+  from {width:10px;}
+}
+.container {
+  margin-top: 30px;
+}
+.container .row {
+  margin-bottom: 6px;
+  margin-top:6px;
+}
+.container .row span:nth-child(2){
+  animation: anit 1.7s steps(170,end);
+  height:15px;
+  background:#55acee;
+  position:absolute;
+  margin-left:10px;
+  margin-top:5px;
+}
+.container .row span:nth-child(1){
+  display:inline-block;
+  width:200px;
+  text-align:center;
+  font-family: "Open Sans",sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+#drop_zone {
+  position:absolute;
+  text-align:center;
+  width:100%;
+  height:100%;
+  background:#eee;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+}
+#drop_zone h1 {
+  padding: 230px 0px;
+  color:rgb(120,120,120);
+  font-size: 50px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+				                </pre> 
+							</div>
+							<div class="codepen-embed">
+								<p data-height="365" data-theme-id="dark" data-slug-hash="jBjOOR" data-default-tab="result" data-user="dsr" data-embed-version="2" data-pen-title="Basic Words Counter" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/dsr/pen/jBjOOR/">Basic Words Counter</a> by Darshan Rajadhyaksha (<a href="http://codepen.io/dsr">@dsr</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-4">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

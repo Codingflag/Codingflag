@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Book Opening Animation on Hover</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto+Condensed:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">	
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> 
+	<link rel="stylesheet" href="../../css/header.css"/>
+	<script type="text/javascript" src="../../js/shCore.js"></script>
+	<script type="text/javascript" src="../../js/shBrushCss.js"></script>
+	<script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../../js/shBrushPlain.js"></script>
+	<script type="text/javascript" src="../../js/shBrushXml.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/shThemeDefault.css"/>
+    <script type="text/javascript">
+        SyntaxHighlighter.config.clipboardSwf = '../../clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link rel="stylesheet" href="../styles/main.css"/	>
+</head>
+<body>
+<header class="header-two-bars">
+	<div class="header-first-bar">
+		<div class="header-limiter">
+			<h1><a href="#">Coding<span>flag</span></a></h1>
+			<nav>
+        <a href="../javascript.html">JavaScript</a>
+        <a class="selected" href="../css.html">CSS</a>
+        <a href="../api.html">API</a>
+			</nav>
+		</div>
+	</div>
+</header>
+<div class="container main-content">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-8">
+			<div class="card col-xs-12 col-sm-12 col-md-12">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<div class="content padding">
+							<h2>Book Opening Animation on Hover</h2>
+							<p class="posted">POSTED ON <b>APRIL 4, 2017</b></p>
+							<img style="width:100%;" class="img-responsive" src="http://codingflag.in/codes/Html_Web/20160805012636pm1/preview.jpg" alt="">
+							<p class="details">
+								<br>
+							</p>
+							<div class="code htmlCode">
+								<div class="title">html</div>
+				                <pre class="brush: html" style="margin-top:-10px;">
+&lt;h2 id=&quot;statText&quot;&gt;Hover the Book.&lt;/h2&gt;
+
+&lt;div id=&quot;book-page&quot;&gt;
+    &lt;div id=&quot;book-cover&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+								</pre> 
+							</div>
+							<div class="code cssCode">
+								<div class="title">css</div>
+				                <pre class="brush: css" style="margin-top:-10px;">
+body {
+    margin:0;
+    padding: 0;
+}
+#statText {
+    text-align: center;
+    font-size: 170%;
+    margin-top:50px;
+    font-family: cursive;
+    padding-left: 20px;
+    font-color:#151719;
+}
+#book-page {
+    position: absolute;
+    width:220px;
+    height:320px;
+    left:50%;
+    top: 50%;
+    background: url("http://codingflag.in/codes/Html_Web/20160805012636pm1/page.jpg") no-repeat center;
+    box-shadow: 7px 6px 6px rgba(136, 136, 136, 0.77);
+    background-size: cover;
+    margin:-150px 0 0 -100px;
+    transform-style:perserve-3d;
+    perspective:500px;
+}
+#book-cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    cursor: alias;
+    outline: none;
+    background: url("http://codingflag.in/codes/Html_Web/20160805012636pm1/cover.jpg") no-repeat center;
+    background-size: cover;
+    transform-origin:0 50%;
+    -moz-transition:all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    -webkit-transition:all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition:all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+#book-page:hover #book-cover{
+    -moz-transform:rotateY(-65deg);
+    -webkit-transform:rotateY(-65deg);
+    transform:rotateY(-65deg);
+}
+				                </pre> 
+							</div>
+							<div class="codepen-embed">
+								<p data-height="365" data-theme-id="dark" data-slug-hash="QpXWJw" data-default-tab="css,result" data-user="dsr" data-embed-version="2" data-pen-title="Book Opening Animation" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/dsr/pen/QpXWJw/">Book Opening Animation</a> by Darshan Rajadhyaksha (<a href="http://codepen.io/dsr">@dsr</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-4">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
