@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Get HTML Source Code of Given URL using JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="../../images/favicon.ico" >	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto+Condensed:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">	
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> 
+	<link rel="stylesheet" href="../../css/header.css"/>
+	<script type="text/javascript" src="../../js/shCore.js"></script>
+	<script type="text/javascript" src="../../js/shBrushCss.js"></script>
+	<script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../../js/shBrushPlain.js"></script>
+	<script type="text/javascript" src="../../js/shBrushXml.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/shThemeDefault.css"/>
+    <script type="text/javascript">
+        SyntaxHighlighter.config.clipboardSwf = '../../clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link rel="stylesheet" href="../styles/main.css"/	>
+</head>
+<body>
+<header class="header-two-bars">
+	<div class="header-first-bar">
+		<div class="header-limiter">
+			<h1><a href="../../index.html">Coding<span>flag</span></a></h1>
+			<nav>
+				<a class="selected" href="../javascript.html">JavaScript</a>
+				<a href="../css.html">CSS</a>
+				<a href="../api.html">API</a>
+			</nav>
+		</div>
+	</div>
+</header>
+<div class="container main-content">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-8">
+			<div class="card col-xs-12 col-sm-12 col-md-12">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<div class="content padding">
+							<h2>Get HTML Source Code of Given URL using JavaScript</h2>
+							<p class="posted">POSTED ON <b>APRIL 10, 2017</b></p>
+							<img style="width:100%;border:2px solid #eee" class="img-responsive" src="http://www.chipsypc.com/wp-content/uploads/2011/03/basekit-codigo-fuente.png" alt="">
+							<p class="details">
+								<br>
+								Libraries Required 
+								<br>
+								jQuery.js - <a href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js">https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js</a>
+								<br>
+							</p>
+							<div class="ad-mob-only">			
+								<div class="text-center">
+									<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+									<!-- programmingTutorials c++ -->
+									<ins class="adsbygoogle"
+										     style="display:block"
+										     data-ad-client="ca-pub-4856888960652188"
+										     data-ad-slot="1149228552"
+										     data-ad-format="auto"></ins>
+									<script>
+									   (adsbygoogle = window.adsbygoogle || []).push({});
+									</script>			
+								</div>
+							</div>
+							<div class="code htmlCode">
+								<div class="title">html</div>
+				                <pre class="brush: html" style="margin-top:-10px;">
+&lt;div class=&quot;container&quot;&gt;
+  &lt;input type=&quot;text&quot; id=&quot;urlTextbox&quot; placeholder=&quot;Enter URL Here&quot;/&gt;
+  &lt;button id=&quot;getCode&quot;&gt;Get Code&lt;/button&gt;
+  &lt;div id=&quot;code&quot;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+								</pre> 
+							</div>
+							<div class="code jsCode">
+								<div class="title">JavaScript</div>
+				                <pre class="brush: js" style="margin-top:-10px;">
+jQuery.ajax = (function(_ajax){
+    var protocol = location.protocol,
+        hostname = location.hostname,
+        exRegex = RegExp(protocol + '//' + hostname),
+        YQL = 'http' + (/^https/.test(protocol)?'s':'') + '://query.yahooapis.com/v1/public/yql?callback=?',
+        query = 'select * from html where url=&quot;{URL}&quot; and xpath=&quot;*&quot;';
+
+    function isExternal(url) {
+        return !exRegex.test(url) &amp;&amp; /:\/\//.test(url);
+    }
+    return function(o) {
+        var url = o.url;
+        if ( /get/i.test(o.type) &amp;&amp; !/json/i.test(o.dataType) &amp;&amp; isExternal(url) ) {
+            o.url = YQL;
+            o.dataType = 'json';
+            o.data = {
+                q: query.replace(
+                    '{URL}',
+                    url + (o.data ?
+                        (/\?/.test(url) ? '&amp;' : '?') + jQuery.param(o.data)
+                    : '')
+                ),
+                format: 'xml'
+            };
+            if (!o.success &amp;&amp; o.complete) {
+                o.success = o.complete;
+                delete o.complete;
+            }
+            o.success = (function(_success){
+                return function(data) {
+                    if (_success) {
+                        _success.call(this, {
+                            responseText: data.results[0]
+                                .replace(/&lt;script[^&gt;]+?\/&gt;|&lt;script(.|\s)*?\/script&gt;/gi, '')
+                        }, 'success');
+                    }
+                };
+            })(o.success);
+        }
+        return _ajax.apply(this, arguments);
+    };
+})(jQuery.ajax);
+
+$(document).ready(function(){
+    $('#getCode').click(function(){
+        $('#code').text('Processing.....');
+        var pageURL = $('#urlTextbox').val();
+        $.ajax({
+            url: pageURL,
+            type: 'GET',
+            success: function(res) {
+                var text = res.responseText;
+                $('#code').text(text);
+            }
+        });
+    });
+});
+				                </pre> 
+							</div>
+							<div class="code cssCode">
+								<div class="title">css</div>
+				                <pre class="brush: css" style="margin-top:-10px;">
+#code {
+  margin-top:20px;
+  padding:3px;
+  background:#f7f7f7;
+  font-family:sans-serif,helvetica,serif;
+  font-size:15px;
+}
+				                </pre> 
+							</div>
+							<div class="codepen-embed">
+								<p data-height="365" data-theme-id="dark" data-slug-hash="LWwyap" data-default-tab="result" data-user="dsr" data-embed-version="2" data-pen-title="Get HTML Source Code of Given URL [ JavaScript ]" class="codepen">See the Pen <a href="http://codepen.io/dsr/pen/LWwyap/">Get HTML Source Code of Given URL [ JavaScript ]</a> by Darshan Rajadhyaksha (<a href="http://codepen.io/dsr">@dsr</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-4">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 socialIcons">
+					<div class="col-xs-2">
+						<a target="_blank" href="https://github.com/codingDSR">
+							<i class="fa fa-github" aria-hidden="true"></i>
+						</a>
+					</div>
+					<div class="col-xs-2">
+						<a target="_blank" href="http://fb.com/codingflag">
+							<i class="fa fa-facebook" aria-hidden="true"></i>
+						</a>						
+					</div>
+					<div class="col-xs-2">
+						<a target="_blank" href="http://codepen.io/dsr/">
+							<i class="fa fa-codepen" aria-hidden="true"></i>
+						</a>						
+					</div>
+					<div class="col-xs-2">
+						<a target="_blank" href="http://twitter.com/dsr3217">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a>						
+					</div>
+					<div class="col-xs-2">
+						<a target="_blank" href="http://instagram.com/darshan.rajadhyaksha">
+							<i class="fa fa-instagram" aria-hidden="true"></i>
+						</a>						
+					</div>
+					<div class="col-xs-2">
+						<a target="_blank" href="mailto:darshan3217@gmail.com">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</a>						
+					</div>
+				</div>
+			</div>
+			
+			<div style="margin-top:25px;" class="text-center">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+					<ins class="adsbygoogle"
+			     			style="display:block"
+			     			data-ad-client="ca-pub-4856888960652188"
+			     			data-ad-slot="5706298154"
+			     			data-ad-format="auto">
+			  		</ins>
+					<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>				
+			</div>
+			
+			<div style="margin-top:20px;" class="text-center">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- programmingTutorials c++ -->
+				<ins class="adsbygoogle"
+					     style="display:block"
+					     data-ad-client="ca-pub-4856888960652188"
+					     data-ad-slot="1149228552"
+					     data-ad-format="auto"></ins>
+				<script>
+				   (adsbygoogle = window.adsbygoogle || []).push({});
+				</script>			
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
